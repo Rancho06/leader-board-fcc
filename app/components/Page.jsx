@@ -1,17 +1,25 @@
 import React, { Component } from 'react'
+import { Navbar, Panel, Table, Button } from 'react-bootstrap'
+import $ from 'jquery'
+
 import UserStore from '../stores/UserStore'
 import { API_recent, API_all } from '../stores/APIStore'
 import UserList from './UserList'
-import { Navbar, Panel, Table } from 'react-bootstrap'
 
 export default class Page extends Component {
 
-    fetchRecent(e) {
+    fetchRecent() {
         UserStore.fetchRecentUsers()
+        $("#recent_header").addClass("btn-success").removeClass("btn-default");
+        $("#alltime_header").addClass("btn-default").removeClass("btn-success");
+        return false
     }
 
-    fetchAll(e) {
+    fetchAll() {
         UserStore.fetchAllUsers()
+        $("#alltime_header").addClass("btn-success").removeClass("btn-default");
+        $("#recent_header").addClass("btn-default").removeClass("btn-success");
+        return false
     }
 
     render() {
@@ -25,23 +33,20 @@ export default class Page extends Component {
                     </Navbar.Header>
                 </Navbar>
                 <div className="container-fluid">
-                    <Panel collapsible defaultExpanded header="Leader Board">
+                    <Panel bsStyle="primary" collapsible defaultExpanded header="Leader Board" footer="CopyRight 2016 @ Shu Zhou" className="text-center">
                         <Table striped bordered condensed hover fill>
                             <thead>
                                 <tr>
                                     <th className="text-primary">#</th>
-                                    <th className="text-primary">Camper</th>
-                                    <th onClick={this.fetchRecent} className="text-success">Points in Past 30 days</th>
-                                    <th onClick={this.fetchAll} className="text-primary">All time Points</th>
+                                    <th className="text-primary">Camper Name</th>
+                                    <th><Button id="recent_header" block bsStyle="success" onClick={this.fetchRecent}>Points in Past 30 days</Button></th>
+                                    <th><Button id="alltime_header" block onClick={this.fetchAll}>All time Points</Button></th>
                                 </tr>
                             </thead>
                             <UserList store={UserStore} />
                         </Table>
                     </Panel>
                 </div>
-                <footer>
-                    <p>CopyRight Shu Zhou 2016</p>
-                </footer>
             </div>
         )
     }

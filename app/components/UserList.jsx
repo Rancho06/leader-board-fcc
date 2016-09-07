@@ -6,7 +6,7 @@ import User from "./User"
 export default class UserList extends Component {
 
     render() {
-        let users = this.props.store.users;
+        let { users } = this.props.store;
         users = users.map((elem, i) => (<User key={i} rank={i+1} imageURL={elem.img} username={elem.username} recent={elem.recent} alltime={elem.alltime} />))
 
         return (

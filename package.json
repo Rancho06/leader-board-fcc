@@ -1,6 +1,6 @@
 {
   "name": "leader-board-fcc",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -17,6 +17,7 @@
     "starter-kit",
     "leader",
     "board",
+    "react-bootstrap"
     "freecodecamp"
   ],
   "author": "Shu Zhou <ranchousc@gmail.com> (http://github.com/Rancho06)",

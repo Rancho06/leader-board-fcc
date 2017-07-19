@@ -1,25 +1,23 @@
-import React, { Component } from 'react'
-import { Navbar, Panel, Table, Button } from 'react-bootstrap'
-import $ from 'jquery'
-
-import UserStore from '../stores/UserStore'
-import { API_recent, API_all } from '../stores/APIStore'
-import UserList from './UserList'
+import React, { Component } from 'react';
+import { Navbar, Panel, Table, Button } from 'react-bootstrap';
+import $ from 'jquery';
+import UserStore from '../stores/UserStore';
+import { API_recent, API_all } from '../stores/APIStore';
+import UserList from './UserList';
 
 export default class Page extends Component {
-
     fetchRecent() {
-        UserStore.fetchRecentUsers()
+        UserStore.fetchRecentUsers();
         $("#recent_header").addClass("btn-success").removeClass("btn-default");
         $("#alltime_header").addClass("btn-default").removeClass("btn-success");
-        return false
+        return false;
     }
 
     fetchAll() {
-        UserStore.fetchAllUsers()
+        UserStore.fetchAllUsers();
         $("#alltime_header").addClass("btn-success").removeClass("btn-default");
         $("#recent_header").addClass("btn-default").removeClass("btn-success");
-        return false
+        return false;
     }
 
     render() {
@@ -48,6 +46,6 @@ export default class Page extends Component {
                     </Panel>
                 </div>
             </div>
-        )
+        );
     }
-}
+};

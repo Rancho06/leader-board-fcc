@@ -6,9 +6,9 @@ var APP_DIR = path.resolve(__dirname, 'app');
 
 var config = {
   entry: [
-    'webpack-dev-server/client?http://localhost:3000',
+    'webpack-dev-server/client?0.0.0.0:3000',
     'webpack/hot/only-dev-server',
-    APP_DIR + '/index.jsx'
+    APP_DIR + '/index.js'
   ],
   output: {
     publicPath: '/static/',

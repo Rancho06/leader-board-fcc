@@ -1,8 +1,8 @@
 # Leader Board @ FreeCodeCamp
-This is an mini web app displaying FreeCodeCamp Top/Active users. The idea of the project belongs to FreeCodeCamp.
+This is an mini web app displaying FreeCodeCamp Top/Active users.
 
 ## Demo
-Demo Page TBD.
+Demo Page http://www.findcoolguys.com.
 
 ## Modules
 * React
@@ -20,4 +20,4 @@ Demo Page TBD.
 5. The leader board web app is running on localhost:3000.
 
 ## License
-MIT | FreeCodeCamp
+MIT
